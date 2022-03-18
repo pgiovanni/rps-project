@@ -41,7 +41,7 @@ function playGame() {
 function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Current Score to the User
-    console.log("The current score is <br> Computer: ${game.countOfComputerWins}, <br> Player: ${game.countOfPLayerwins} <br> Ties: ${game.countOfTies}");
+    console.log("The current score is \nComputer: " + game.countOfComputerWins + " \nPlayer: " + game.countOfPlayerWins + " \nTies: " + game.countOfTies);
     
     //Prompt for Player Selection
     var playerSelection = getPlayerSelection();
@@ -55,8 +55,6 @@ function playRound(roundNumber) {
 
 }
 
-
-
 /**
  * prompt the user to get a selection
  * @returns Selections
@@ -65,11 +63,19 @@ function getPlayerSelection() {
     
     //*********************************ADD CODE HERE *************************************/
     // Prompt, Validate and Return the player selection. This must be in the form of "rock", "paper", or "scissors" exactly
+    let validInput = false;
     while(!validInput){
         let playerSelection = prompt("Make your selection (must be 'rock', 'paper', or 'scissors'");
         switch(playerSelection) {
-            case 'rock' || 'paper' || 'scissors':
+            case 'rock':
                 validInput = true;
+                return 'rock';
+            case 'paper':
+                validInput = true;
+                return 'paper';
+            case 'scissors':
+                validInput = true;
+                return 'scissors';
             default:
                 console.log("Invalid selection (must be 'rock', 'paper', or 'scissors'");
         }

@@ -28,7 +28,12 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above 
-        return Selections.Math.floor(Math.random() * (3) + 1);
+        if(Math.floor(Math.random() * (3) + 1) === 1)
+            return Selections.ROCK;
+        else if(Math.floor(Math.random() * (3) + 1) === 2)
+            return Selections.PAPER;
+        else if(Math.floor(Math.random() * (3) + 1) === 3)
+            return Selections.SCISSORS;
      }
 
     /**
@@ -40,30 +45,43 @@ class Round{
     determineWinner() {
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
-        if (this.playerSelection === "rock" && this.computerSelection === "paper")
+        if (this.playerSelection === "rock" && this.computerSelection === "paper") {
+            game.incrementComputerWins();
             return Outcomes.COMPUTER_WINS;
-        else if(this.playerSelection ===  "rock" &&  this.computerSelection === "rock")
+        }
+        else if(this.playerSelection ===  "rock" &&  this.computerSelection === "rock") {
+            game.incrementCountOfTies();
             return Outcomes.TIE;
-        else if(this.playerSelection === "rock" && this.computerSelection === "scissors")
+        }
+        else if(this.playerSelection === "rock" && this.computerSelection === "scissors") {
+            game.incrementPlayerWins();
             return Outcomes.PLAYER_WINS;
-        else if(this.playerSelection === "paper" && this.computerSelection === "scissors")
+        }
+        else if(this.playerSelection === "paper" && this.computerSelection === "scissors") {
+            game.incrementComputerWins();
             return Outcomes.COMPUTER_WINS;
-        else if(this.playerSelection === "paper" && this.computerSelection === "paper")
+        }
+        else if(this.playerSelection === "paper" && this.computerSelection === "paper") {
+            game.incrementCountOfTies();
             return Outcomes.TIE;
-        else if(this.playerSelection === "paper" && this.computerSelection === "rock")
+        }
+        else if(this.playerSelection === "paper" && this.computerSelection === "rock") {
+            game.incrementPlayerWins();
             return Outcomes.PLAYER_WINS;
-        else if(this.playerSelection === "scissors" && this.computerSelection === "rock")
+        }
+        else if(this.playerSelection === "scissors" && this.computerSelection === "rock") {
+            game.incrementComputerWins();
             return Outcomes.COMPUTER_WINS;
-        else if(this.playerSelection === "scissors" && this.computerSelection === "scissors")
+        }
+        else if(this.playerSelection === "scissors" && this.computerSelection === "scissors") {
+            game.incrementCountOfTies();
             return Outcomes.TIE;
-        else if(this.playerSelection === "scissors" && this.computerSelection === "paper")
+        }
+        else if(this.playerSelection === "scissors" && this.computerSelection === "paper") {
+            game.incrementPlayerWins;
             return Outcomes.PLAYER_WINS;
-
-
+        }
     }
-
-
-
 }
 
 

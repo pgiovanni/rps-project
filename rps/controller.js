@@ -27,10 +27,10 @@ function playGame() {
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Final Score from the properties stored in the Game object
-    console.log("The final score is: <br>")
-    console.log("Number of computer wins ${game.countOfComputerWins}");
-    console.log("Number of player wins ${game.countOfPlayerWins}");
-    console.log("Number of ties ${game.countOfTies}");
+    console.log("The final score is: \n")
+    console.log("Number of computer wins " + game.countOfComputerWins);
+    console.log(" \nNumber of player wins " + game.countOfPlayerWins);
+    console.log(" \nNumber of ties " + game.countOfTies);
 
 }
 
@@ -41,17 +41,22 @@ function playGame() {
 function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Current Score to the User
-    console.log("The current score is \nComputer: " + game.countOfComputerWins + " \nPlayer: " + game.countOfPlayerWins + " \nTies: " + game.countOfTies);
+    for(let i = 0; i < roundNumber; i++) {
+        console.log("The current score is \nComputer: " + game.countOfComputerWins + " \nPlayer: " + game.countOfPlayerWins + " \nTies: " + game.countOfTies);
     
-    //Prompt for Player Selection
-    var playerSelection = getPlayerSelection();
-    var round = new Round(playerSelection);
+        //Prompt for Player Selection
+        var playerSelection = getPlayerSelection();
+        console.log(playerSelection);
 
-    //Play the Round
-    var outcome = round.determineWinner();
+        var round = new Round(playerSelection);
 
-    //*********************************ADD CODE HERE *************************************/
-    // Display the Round Results from the properties stored in the Round object
+        //Play the Round
+        var outcome = round.determineWinner();
+
+        //*********************************ADD CODE HERE *************************************/
+        // Display the Round Results from the properties stored in the Round object
+        console.log(outcome);
+    }
 
 }
 

@@ -46,7 +46,7 @@ class Round{
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
         if (this.playerSelection === "rock" && this.computerSelection === "paper") {
-            game.incrementComputerWins();
+            this.game.incrementComputerWins();
             return Outcomes.COMPUTER_WINS;
         }
         else if(this.playerSelection ===  "rock" &&  this.computerSelection === "rock") {
